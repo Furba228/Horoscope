@@ -1,0 +1,26 @@
+{% extends 'horoscop/base.html'%}
+{% load static%}
+
+{%block css %}
+<link rel="stylesheet" href="{% static 'horoscop/css/main.css'%}">
+{%endblock%}
+
+{%block title %}
+Главная
+
+{%endblock%}
+
+{%block content%}
+
+<h1>Приложение Гороскоп</h1>
+<ul>
+    {% for zodiacs in zodiac_list%}
+    <li><a href="{% url 'horoscope-name' sign_zodiac=zodiacs %}">{{zodiacs|title}}</a></li>
+
+    {%endfor%}
+
+</ul>
+
+{%endblock%}
+
+

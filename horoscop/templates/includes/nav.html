@@ -1,0 +1,8 @@
+<nav>
+    <a href="{% url 'horoscope-main'%}">Главная</a>
+
+    {% for zodiacs in zodiac_list%}
+    <a href="{% url 'horoscope-name' sign_zodiac=zodiacs %}">{{zodiacs|title}}</a>
+    {%endfor%}
+
+</nav>
